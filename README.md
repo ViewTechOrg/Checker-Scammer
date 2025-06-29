@@ -1,4 +1,4 @@
-<h1 align="center"><code>Trust-YourCam</code></h1> <p align="center"> <img src="https://github.com/ViewTechOrg/Server/blob/main/img/Trust-YourCam/WhatsApp%20Image%202025-04-25%20at%2011.09.13.jpeg" width="590"><br><br>
+<h1 align="center"><code>Checker-Scammer</code></h1> <p align="center"> <img src="https://github.com/ViewTechOrg/Server/blob/main/img/Trust-YourCam/WhatsApp%20Image%202025-04-25%20at%2011.09.13.jpeg" width="590"><br><br>
   <img src="https://img.shields.io/static/v1?label=ViewTechTeam&color=green&message=+&logo=nano&logoColor=white&style=for-the-badge">
   <img src="https://img.shields.io/static/v1?label=Author&color=green&message=viewTech+ORG&logo=nim&logoColor=white&style=for-the-badge"><br>
   <img src="https://img.shields.io/github/stars/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
@@ -10,9 +10,9 @@
 
   **Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan jumlah tag dalam batas tertentu, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
 
-### 📸 Data yang Dikumpulkan
+### 🔎 Data yang Dikumpulkan
 - 📍 Foto Profile.
-- 📷 Informasi Umum (nomor hp dan sebagainya).
+- 🧪 Informasi Umum (nomor hp dan sebagainya).
 - 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi Victim.
 ### 🧩 Fitur Utama
 - Analisis Nomor
