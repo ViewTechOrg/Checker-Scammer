@@ -6,7 +6,7 @@
 
 # Daftar package
 PACKAGEBASH := curl python bc ncurses-utils file ossp-uuid uuid-utils less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils fzf gum silversearcher-ag file brotli bc figlet less toilet binutils
-PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests faker
+PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests faker phonenumbers
 TERMUX_PATH := /data/data/com.termux/files/usr/bin/bash
 
 # =======================[ CEK ]=======================
