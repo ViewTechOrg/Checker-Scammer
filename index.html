@@ -1,1 +1,149 @@
-<p>Dalam proses pembuatan page</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checker Scammer - Dokumentasi</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dUjN7hBXTfCgGbTwGtv3o6bd2TqM5vS5zQn9k4OfFhK1sUGlsyOacQ8LStvM21L3eFhGcDGpVpt7Jv4XwPghrA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS CSS (Scroll Animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans transition-all duration-300">
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-6 dark:bg-black">
+    <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold">Checker Scammer - Dokumentasi</h1>
+        <p class="text-sm text-gray-300 mt-1">Kenali dengan baik sebelum anda tertipu oleh hal yang tampak meyakinkan.</p>
+      </div>
+      <button id="toggleDark" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm flex items-center gap-2">
+        <i id="iconToggle" class="fa-solid fa-moon"></i>
+        <span id="toggleText">Gelap</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+    <section data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-3">Apa itu Checker Scammer?</h2>
+      <p class="leading-relaxed">
+        <strong>Checker-Scammer</strong> adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan jumlah tag dalam batas tertentu, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+      </p>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-2xl font-bold mb-3">Fitur Utama</h2>
+      <ul class="list-disc list-inside leading-loose">
+        <li><strong>Analisis nomor telepon</strong> secara cepat dan ringan melalui CLI untuk mendeteksi indikasi penipuan.</li>
+        <li><strong>Analisis NIK dan database:</strong> Coming Soon, fitur akan segera tersedia untuk melengkapi sistem deteksi penipuan.</li>
+        <li>Fitur <strong>Show Tag Victim:</strong> Coming Soon, akan segera hadir untuk menampilkan informasi tag yang terkait dengan korban penipuan.</li>
+      </ul>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-2xl font-bold mb-3">Data yang Dikumpulkan</h2>
+ <p class="leading-relaxed">
+   <strong>Checker-Scammer</strong> Menampilkan foto profil, informasi umum seperti nomor HP, serta hasil analisis berdasarkan algoritma untuk mengidentifikasi potensi sebagai victim atau pihak yang pernah terlibat dalam aktivitas penipuan.
+ </p>
+    </section>
+
+<h2 class="text-2xl font-bold mb-3">Cara Install & Jalankan</h2>
+<ol class="list-decimal list-inside leading-loose">
+  <li>Buka terminal dan jalankan perintah berikut sesuai dokumentasi.</li>
+  <pre class="bg-gray-800 text-green-300 p-4 rounded text-sm overflow-x-auto mt-2">
+pkg update
+pkg upgrade
+apt install git make just
+git clone https://github.com/ViewTechOrg/Checker-Scammer
+cd Checker-Scammer
+make install
+just run
+      </pre>
+  <p class="mt-3 text-sm text-gray-600">
+    Tool ini akan menampilkan menu CLI untuk memilih pengecekan nomer telepon.
+  </p>
+  <li>Atur ukuran layar sesuai kebutuhan:
+    <ul class="list-disc list-inside ml-5">
+      <li><strong>Potrait:</strong> x: 101, y: 35</li>
+      <li><strong>Landscape:</strong> x: 181, y: 70</li>
+    </ul>
+    Untuk mengatur ukuran, cukup <strong>mencubit layar</strong> (zoom gesture) jika menggunakan perangkat sentuh.
+  </li>
+  <li>Gunakan <strong>kursor atau tombol panah</strong> untuk mengontrol alat, dan <strong>keyboard</strong> untuk mengetik di kolom input.</li>
+  <li>Gunakan tools ini saat ingin memverifikasi nomor seseorang sebelum melakukan transaksi.</li>
+  <li>Selamat! Anda bisa bertransaksi dengan lebih aman. <em>(Sedia Payung Sebelum Hujan)</em></li>
+</ol>
+
+</section>
+
+    <section data-aos="fade-up" data-aos-delay="400">
+      <h2 class="text-2xl font-bold mb-3"> Sumber & Dokumentasi Resmi</h2>
+      <p>
+        Untuk informasi lebih lanjut dan update terbaru, kunjungi repositori GitHub:
+        <br />
+        <a href="https://github.com/ViewTechOrg/Checker-Scammer" target="_blank" class="text-blue-600 underline">
+          https://github.com/ViewTechOrg/Checker-Scammer
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 dark:bg-black text-white text-center py-6 mt-10">
+    <div class="space-x-4 mb-2 text-lg">
+      <a href="https://github.com/ViewTechOrg" target="_blank" class="hover:text-blue-400" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://instagram.com/viewtechorg" target="_blank" class="hover:text-pink-400" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-green-400" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:email@example.com" class="hover:text-red-400" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://youtube.com" target="_blank" class="hover:text-red-500" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    <p class="text-sm">&copy; 2025 Checker Scammer Docs. Dibuat oleh ViewTechOrg ❤️</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const toggleBtn = document.getElementById("toggleDark");
+    const iconToggle = document.getElementById("iconToggle");
+    const toggleText = document.getElementById("toggleText");
+
+    toggleBtn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      iconToggle.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      toggleText.textContent = isDark ? "Terang" : "Gelap";
+    });
+  </script>
+</body>
+</html>
