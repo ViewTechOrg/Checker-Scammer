@@ -51,6 +51,9 @@ just run
 
 > Checker-Scammer alat identifikasi Berdasarkan Data, Sedia Payung Sebelum Hujan, gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan
 
+### 📍 Keamana sistem (script)
+- Script ini Di lengkapi dengan keamanan Anti Mitm dan modifikasi Obfuscate dengan versi 10.
+  
 ## ✨ Kontributor
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
