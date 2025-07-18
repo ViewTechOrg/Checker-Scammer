@@ -4,157 +4,523 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checker Scammer - Dokumentasi</title>
-
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'cyber-blue': '#3b82f6',
+            'cyber-green': '#10b981',
+            'tech-gray': '#1f2937',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out',
+            'slide-in-right': 'slideInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.4s ease-out',
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            slideInRight: {
+              '0%': { opacity: '0', transform: 'translateX(100px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' }
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' }
+            },
+            glowPulse: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+              '50%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
     };
   </script>
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dUjN7hBXTfCgGbTwGtv3o6bd2TqM5vS5zQn9k4OfFhK1sUGlsyOacQ8LStvM21L3eFhGcDGpVpt7Jv4XwPghrA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- AOS CSS (Scroll Animations) -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html {
+    * {
       scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #1f2937, #1e40af);
+    }
+
+    .dark .hero-gradient {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    }
+
+    .cyber-glow {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(31, 41, 55, 0.1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(31, 41, 55, 0.15);
+    }
+
+    .dark .card-hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .dark .card-hover:hover {
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .button-glow {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .button-glow:hover {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .button-glow::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .button-glow:hover::before {
+      left: 100%;
+    }
+
+    .code-block {
+      background: #1f2937;
+      color: #10b981;
+      font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+    }
+
+    .code-block::before {
+      content: '$ ';
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    .link-hover {
+      position: relative;
+      display: inline-block;
+    }
+
+    .link-hover::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #3b82f6;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    .link-hover:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .social-icon {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .animate-on-scroll.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .code-container:hover .copy-button {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .dark .feature-icon {
+      background: rgba(59, 130, 246, 0.2);
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans transition-all duration-300">
 
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-all duration-300">
   <!-- Header -->
-  <header class="bg-gray-900 text-white py-6 dark:bg-black">
-    <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
-      <div>
-        <h1 class="text-3xl font-bold">Checker Scammer - Dokumentasi</h1>
-        <p class="text-sm text-gray-300 mt-1">Kenali dengan baik sebelum anda tertipu oleh hal yang tampak meyakinkan.</p>
+  <header class="hero-gradient text-white py-8 sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-4 animate-slide-in-right">
+        <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center animate-glow-pulse">
+          <i class="fas fa-shield-alt text-cyber-green text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold">Checker Scammer</h1>
+          <p class="text-sm text-white/80 mt-1">
+            Kenali dengan baik sebelum anda tertipu oleh hal yang tampak meyakinkan.
+          </p>
+        </div>
       </div>
-      <button id="toggleDark" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm flex items-center gap-2">
-        <i id="iconToggle" class="fa-solid fa-moon"></i>
-        <span id="toggleText">Gelap</span>
+      <button id="darkToggle" class="button-glow bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm flex items-center gap-2 border border-white/20">
+        <i id="toggleIcon" class="fas fa-moon"></i>
+        <span id="toggleText" class="hidden sm:inline">Gelap</span>
       </button>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
-    <section data-aos="fade-up">
-      <h2 class="text-2xl font-bold mb-3">Apa itu Checker Scammer?</h2>
-      <p class="leading-relaxed">
-        <strong>Checker-Scammer</strong> adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan jumlah tag dalam batas tertentu, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+  <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
+    <!-- Hero Section -->
+    <section class="text-center space-y-6 animate-on-scroll">
+      <div class="relative">
+        <h2 class="text-5xl font-bold gradient-text animate-float">
+          Dokumentasi
+        </h2>
+        <div class="absolute -inset-4 bg-gradient-to-r from-cyber-blue/20 to-cyber-green/20 blur-lg rounded-full opacity-30"></div>
+      </div>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        Alat penyelidikan berbasis CLI untuk mengidentifikasi nomor WhatsApp yang berpotensi scammer
       </p>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-2xl font-bold mb-3">Fitur Utama</h2>
-      <ul class="list-disc list-inside leading-loose">
-        <li><strong>Analisis nomor telepon</strong> secara cepat dan ringan melalui CLI untuk mendeteksi indikasi penipuan.</li>
-        <li><strong>Analisis NIK dan database:</strong> Coming Soon, fitur akan segera tersedia untuk melengkapi sistem deteksi penipuan.</li>
-        <li>Fitur <strong>Show Tag Victim:</strong> Coming Soon, akan segera hadir untuk menampilkan informasi tag yang terkait dengan korban penipuan.</li>
-      </ul>
+    <!-- What is Checker Scammer -->
+    <section class="animate-on-scroll">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-xl card-hover">
+        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+          <i class="fas fa-shield-alt text-cyber-blue text-2xl"></i>
+          Apa itu Checker Scammer?
+        </h2>
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+          <strong class="text-gray-900 dark:text-white">Checker-Scammer</strong> adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik 
+          Perhitungan berdasarkan jumlah tag dalam batas tertentu, berfungsi untuk mengidentifikasi sebuah nomor platform 
+          whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang 
+          serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat 
+          ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+        </p>
+      </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="200">
-      <h2 class="text-2xl font-bold mb-3">Data yang Dikumpulkan</h2>
- <p class="leading-relaxed">
-   <strong>Checker-Scammer</strong> Menampilkan foto profil, informasi umum seperti nomor HP, serta hasil analisis berdasarkan algoritma untuk mengidentifikasi potensi sebagai victim atau pihak yang pernah terlibat dalam aktivitas penipuan.
- </p>
+    <!-- Features -->
+    <section class="animate-on-scroll">
+      <div class="space-y-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Fitur Utama</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover" style="animation-delay: 0ms;">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-lg feature-icon flex items-center justify-center">
+                <i class="fas fa-mobile-alt text-cyber-blue text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Analisis Nomor Telepon</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Analisis nomor telepon secara cepat dan ringan melalui CLI untuk mendeteksi indikasi penipuan.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover" style="animation-delay: 200ms;">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-lg feature-icon flex items-center justify-center">
+                <i class="fas fa-database text-cyber-blue text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Analisis NIK & Database</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Coming Soon - Fitur akan segera tersedia untuk melengkapi sistem deteksi penipuan.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover" style="animation-delay: 400ms;">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-lg feature-icon flex items-center justify-center">
+                <i class="fas fa-eye text-cyber-blue text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Show Tag Victim</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Coming Soon - Akan segera hadir untuk menampilkan informasi tag yang terkait dengan korban penipuan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-<h2 class="text-2xl font-bold mb-3">Cara Install & Jalankan</h2>
-<ol class="list-decimal list-inside leading-loose">
-  <li>Buka terminal dan jalankan perintah berikut sesuai dokumentasi.</li>
-  <pre class="bg-gray-800 text-green-300 p-4 rounded text-sm overflow-x-auto mt-2">
-pkg update
+    <!-- Data Collection -->
+    <section class="animate-on-scroll">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-xl card-hover">
+        <h2 class="text-3xl font-bold mb-6">Data yang Dikumpulkan</h2>
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+          <strong class="text-gray-900 dark:text-white">Checker-Scammer</strong> Menampilkan foto profil, informasi umum seperti nomor HP, 
+          serta hasil analisis berdasarkan algoritma untuk mengidentifikasi potensi sebagai victim atau pihak yang pernah 
+          terlibat dalam aktivitas penipuan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section class="animate-on-scroll">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-xl card-hover">
+        <h2 class="text-3xl font-bold mb-8">Cara Install & Jalankan</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">1. Instalasi</h3>
+            <p class="mb-4 text-gray-600 dark:text-gray-400">Buka terminal dan jalankan perintah berikut sesuai dokumentasi:</p>
+            <div class="code-container relative">
+              <pre class="code-block p-4 rounded-lg text-sm overflow-x-auto">pkg update
 pkg upgrade
 apt install git make just
 git clone https://github.com/ViewTechOrg/Checker-Scammer
 cd Checker-Scammer
 make install
-just run
-      </pre>
-  <p class="mt-3 text-sm text-gray-600">
-    Tool ini akan menampilkan menu CLI untuk memilih pengecekan nomer telepon.
-  </p>
-  <li>Atur ukuran layar sesuai kebutuhan:
-    <ul class="list-disc list-inside ml-5">
-      <li><strong>Potrait:</strong> x: 101, y: 35</li>
-      <li><strong>Landscape:</strong> x: 181, y: 70</li>
-    </ul>
-    Untuk mengatur ukuran, cukup <strong>mencubit layar</strong> (zoom gesture) jika menggunakan perangkat sentuh.
-  </li>
-  <li>Gunakan <strong>kursor atau tombol panah</strong> untuk mengontrol alat, dan <strong>keyboard</strong> untuk mengetik di kolom input.</li>
-  <li>Gunakan tools ini saat ingin memverifikasi nomor seseorang sebelum melakukan transaksi.</li>
-  <li>Selamat! Anda bisa bertransaksi dengan lebih aman. <em>(Sedia Payung Sebelum Hujan)</em></li>
-</ol>
+just run</pre>
+              <button class="copy-button bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-xs" onclick="copyCode(this)">
+                <i class="fas fa-copy"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold">2. Pengaturan Layar</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-700">
+                <h4 class="font-semibold text-cyber-blue">Portrait Mode</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">x: 101, y: 35</p>
+              </div>
+              <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-700">
+                <h4 class="font-semibold text-cyber-blue">Landscape Mode</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">x: 181, y: 70</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Untuk mengatur ukuran, cukup <strong>mencubit layar</strong> (zoom gesture) jika menggunakan perangkat sentuh.
+            </p>
+          </div>
 
-</section>
+          <div class="space-y-2">
+            <h3 class="text-xl font-semibold">3. Kontrol</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
+              <li>Gunakan <strong>kursor atau tombol panah</strong> untuk mengontrol alat</li>
+              <li>Gunakan <strong>keyboard</strong> untuk mengetik di kolom input</li>
+              <li>Gunakan tools ini saat ingin memverifikasi nomor seseorang sebelum melakukan transaksi</li>
+              <li>Selamat! Anda bisa bertransaksi dengan lebih aman. <em>(Sedia Payung Sebelum Hujan)</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section data-aos="fade-up" data-aos-delay="400">
-      <h2 class="text-2xl font-bold mb-3"> Sumber & Dokumentasi Resmi</h2>
-      <p>
-        Untuk informasi lebih lanjut dan update terbaru, kunjungi repositori GitHub:
-        <br />
-        <a href="https://github.com/ViewTechOrg/Checker-Scammer" target="_blank" class="text-blue-600 underline">
-          https://github.com/ViewTechOrg/Checker-Scammer
-        </a>
-      </p>
+    <!-- Resources -->
+    <section class="animate-on-scroll">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <i class="fab fa-github text-gray-900 dark:text-white"></i>
+            Dokumentasi Resmi
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Untuk informasi lebih lanjut dan update terbaru, kunjungi repositori GitHub:
+          </p>
+          <a href="https://github.com/ViewTechOrg/Checker-Scammer" target="_blank" 
+             class="button-glow bg-cyber-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg inline-flex items-center gap-2 link-hover">
+            Lihat di GitHub
+            <i class="fas fa-external-link-alt text-sm"></i>
+          </a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <i class="fab fa-youtube text-red-500"></i>
+            Tutorial Video
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Pelajari cara menggunakan Checker Scammer melalui tutorial video:
+          </p>
+          <a href="https://youtu.be/cMBJ_GvPey4?si=Mz5HnBlWFEbtJasf" target="_blank" 
+             class="button-glow border-2 border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white px-6 py-3 rounded-lg inline-flex items-center gap-2 link-hover">
+            Tonton Tutorial
+            <i class="fas fa-play text-sm"></i>
+          </a>
+        </div>
+      </div>
     </section>
   </main>
-  <section data-aos="fade-up" data-aos-delay="400">
-      <h2 class="text-2xl font-bold mb-3"> Sumber & Dokumentasi Resmi</h2>
-      <p>
-        Untuk Tutorial Bisa cek YouTube ye:
-        <br />
-        <a href="https://youtu.be/cMBJ_GvPey4?si=Mz5HnBlWFEbtJasf" target="_blank" class="text-blue-600 underline">
-          https://youtu.be/cMBJ_GvPey4?si=Mz5HnBlWFEbtJasf
-        </a>
-      </p>
-    </section>
-</main>
-  
 
   <!-- Footer -->
-  <footer class="bg-gray-900 dark:bg-black text-white text-center py-6 mt-10">
-    <div class="space-x-4 mb-2 text-lg">
-      <a href="https://github.com/ViewTechOrg" target="_blank" class="hover:text-blue-400" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://instagram.com/viewtechorg" target="_blank" class="hover:text-pink-400" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-green-400" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="mailto:email@example.com" class="hover:text-red-400" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://youtube.com" target="_blank" class="hover:text-red-500" title="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
+  <footer class="hero-gradient text-white py-12 mt-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center space-y-8 animate-on-scroll">
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="https://github.com/ViewTechOrg" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-xl" 
+             title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://instagram.com/viewtechorg" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-xl" 
+             title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-xl" 
+             title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:email@example.com" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-xl" 
+             title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-xl" 
+             title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <p class="text-white/80">
+          &copy; 2025 Checker Scammer Docs. Dibuat oleh ViewTechOrg dengan ❤️
+        </p>
+      </div>
     </div>
-    <p class="text-sm">&copy; 2025 Checker Scammer Docs. Dibuat oleh ViewTechOrg ❤️</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const toggleText = document.getElementById('toggleText');
+    
+    // Check for saved dark mode preference
+    const isDarkStored = localStorage.getItem('darkMode') === 'true';
+    if (isDarkStored) {
+      document.documentElement.classList.add('dark');
+      toggleIcon.className = 'fas fa-sun';
+      toggleText.textContent = 'Terang';
+    }
 
-    const toggleBtn = document.getElementById("toggleDark");
-    const iconToggle = document.getElementById("iconToggle");
-    const toggleText = document.getElementById("toggleText");
+    darkToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', isDark);
+      
+      toggleIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      toggleText.textContent = isDark ? 'Terang' : 'Gelap';
+    });
 
-    toggleBtn.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-      const isDark = document.documentElement.classList.contains("dark");
-      iconToggle.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
-      toggleText.textContent = isDark ? "Terang" : "Gelap";
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animate-on-scroll elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Copy code function
+    function copyCode(button) {
+      const codeBlock = button.parentElement.querySelector('pre');
+      const code = codeBlock.textContent;
+      
+      navigator.clipboard.writeText(code).then(() => {
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check text-green-400"></i>';
+        
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+
+    // Add smooth scroll behavior for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add loading animation on page load
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
     });
   </script>
 </body>
