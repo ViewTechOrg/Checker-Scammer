@@ -40,7 +40,7 @@ apt install git make just
 ```bash
 git clone https://github.com/ViewTechOrg/Checker-Scammer
 cd Checker-Scammer
-make install
+make all
 ```
 ### 3. perintah untuk menjalankan tools setelah setup
 ```bash
