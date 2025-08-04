@@ -1,0 +1,4 @@
+Script started on 2025-04-04 12:50:43+07:00 [COMMAND="bash tes.app" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="159" LINES="33"]
+bash: tes.app: No such file or directory
+
+Script done on 2025-04-04 12:50:43+07:00 [COMMAND_EXIT_CODE="127"]
