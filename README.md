@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/static/v1?label=ViewTechTeam&color=green&message=+&logo=nano&logoColor=white&style=for-the-badge">
   <img src="https://img.shields.io/static/v1?label=Author&color=green&message=viewTech+ORG&logo=nim&logoColor=white&style=for-the-badge"><br>
   <img src="https://img.shields.io/github/stars/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
-  <img src="https://img.shields.io/static/v1?label=Version&color=green&message=1.0.4&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
+  <img src="https://img.shields.io/static/v1?label=Version&color=green&message=2.0.1&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
   <img src="https://img.shields.io/github/contributors/ViewTechOrg/Checker-Scammer?logo=apache&style=for-the-badge"><br>
   <img src="https://img.shields.io/static/v1?label=Termux&color=green&message=+&logo=Iterm2&logoColor=white&style=flat">
   <img src="https://img.shields.io/github/forks/ViewTechOrg/Checker-Scammer?logo=github&style=flat"><br>
