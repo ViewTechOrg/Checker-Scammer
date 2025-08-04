@@ -4,6 +4,7 @@
 # version: 1.0.1
 # create: 2023
 
+# ne
 set -o pipefail
 shopt -s expand_aliases
 declare -ig __oo__insideTryCatch=0
