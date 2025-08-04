@@ -16,8 +16,8 @@
 - 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi Victim.
 ### 🧩 Fitur Utama
 - Analisis Nomor
-- Nik Db: Comming soon
-- Show Tag Victim: Comming soon
+- Nik Db: Added
+- Show Tag Victim: Added
 
 
 ### Penggunaan
