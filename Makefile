@@ -8,6 +8,7 @@
 PACKAGEBASH := curl python bc ncurses-utils file ossp-uuid uuid-utils less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils just fzf gum silversearcher-ag file grep brotli bc figlet less toilet binutils python-pip
 PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests faker phonenumbers
 TERMUX_PATH := /data/data/com.termux/files/usr/bin/bash
+PYTHON_VERSION := $(shell python -V | sed 's/[[:space:]]//g' | cut -c 1-10 | tr '[:upper:]' '[:lower:]')
 
 # =======================[ CEK ]=======================
 detectCLI:
@@ -50,6 +51,12 @@ update: detectCLI
 	@git pull
 
 install: install-system install-py
+
+fix:
+	rm -rf $$PREFIX/lib/$(PYTHON_VERSION)/site-packages/requests
+	pip uninstall requests -y
+	pip uninstall psutil -y
+	pip install requests
 
 all: install
 
