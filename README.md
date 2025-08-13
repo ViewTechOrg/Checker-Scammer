@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/github/forks/ViewTechOrg/Checker-Scammer?logo=github&style=flat"><br>
 <br><br>
 
-  **Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan jumlah tag dalam batas tertentu, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+  **Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan data yang sudah di kumpulkan, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
 
 ### 🔎 Data yang Dikumpulkan
 - 📍 Foto Profile.
