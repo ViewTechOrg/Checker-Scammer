@@ -13,10 +13,10 @@
 ### 🔎 Data yang Dikumpulkan
 - 📍 Foto Profile.
 - 🧪 Informasi Umum (nomor hp dan sebagainya).
-- 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi Victim.
+- 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi/investigasi Victim.
 ### 🧩 Fitur Utama
 - Analisis Nomor
-- Nik Db: Added
+- number to Nik : comming soon
 - Show Tag Victim: Added
 
 
