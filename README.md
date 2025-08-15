@@ -24,7 +24,7 @@
 1. Gunakan Ukuran layar untuk potrait x: 101, y: 35 sedangkan landscape x: 181, y: 70, untuk cara mengatur nya bisa dengan mencubit layar.
 2. Jika sudah sesuai jalankan tools Sesuai Dokumentasi perintah.
 3. Gunakan kursor / tombol panah untuk control alat dan keyboard pada kolom input.
-4. Gunakan ke seseorang yang akan bertransaksi dengan Anda.
+4. Gunakan ke nomor seseorang/target yang akan bertransaksi dengan Anda.
 5. Selamat Anda bisa bertransaksi dengan aman (Sedia Payung Sebelum Hujan).
 
 <h3>Klik tutorial</h3>
@@ -46,10 +46,16 @@ make all
 ```bash
 just run
 ```
+
+> jika kalian mengalami kendala error python monitoring kalian bisa menjalankan perintah di bawah ini untuk mengatasinya setelah itu jalankan kembali
+```bash
+make fix
+make install
+```
 </details><br>
 
 
-> Checker-Scammer alat identifikasi Berdasarkan Data, Sedia Payung Sebelum Hujan, gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan
+> Checker-Scammer alat identifikasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
 
 ### 📍 Keamana sistem (script)
 - Script ini Di lengkapi dengan keamanan Anti Mitm dan modifikasi Obfuscate dengan versi 10.
