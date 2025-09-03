@@ -28,7 +28,7 @@
 5. Selamat Anda bisa bertransaksi dengan aman (Sedia Payung Sebelum Hujan).
 
 <h3>Klik tutorial</h3>
-<details close><summary><strong>Command & Penggunaan <code>(pemula)</code></strong></summary>
+<details open><summary><strong>Command & Penggunaan <code>(pemula)</code></strong></summary>
 
 ### 1. Install package 
 ```bash
