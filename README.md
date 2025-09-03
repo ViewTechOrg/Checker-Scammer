@@ -34,7 +34,7 @@
 ```bash
 pkg update
 pkg upgrade
-apt install git make just
+apt install git make just gnupg
 ```
 ### 2. Clone Repositori
 ```bash
