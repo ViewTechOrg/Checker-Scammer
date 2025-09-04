@@ -47,7 +47,7 @@ install-py: detectCLI
 	fi
 
 	@if ! test -d "$$HOME/.local"; then \
-		mkdir "$$HOME/.local" \
+		mkdir "$$HOME/.local"; \
 	fi
 	
 update: detectCLI
