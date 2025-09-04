@@ -34,7 +34,7 @@
 ```bash
 pkg update
 pkg upgrade
-apt install git make just gnupg
+apt-get install git make just gnupg openssl-tool -y
 ```
 ### 2. Clone Repositori
 ```bash
