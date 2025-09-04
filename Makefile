@@ -45,6 +45,10 @@ install-py: detectCLI
 	else \
 		echo "[✗] Python tidak ditemukan! Silakan install terlebih dahulu."; \
 	fi
+
+	@if ! test -d "$$HOME/.local"; then \
+		mkdir "$$HOME/.local" \
+	fi
 	
 update: detectCLI
 	@echo "[>] Melakukan update ..";sleep 1
