@@ -4,7 +4,7 @@ output := "main"
 program:
     @echo "Join Grup Biar Bisa Ngobrol Sama Atmin dan member lainya"
     @echo "[>] link komunitas : https://t.me/+NlHuKTzhZbRkMTJl"
-    @gcc -Wall -O2 -lcrypt -o {{output}} {{set_file}}
-    @./{{output}}
+    @cp -r src/app.py ./app.o
+    @python app.o
 
 run: program
