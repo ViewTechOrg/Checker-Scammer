@@ -32,8 +32,8 @@
 
 ### 1. Install package 
 ```bash
-pkg update
-pkg upgrade
+apt-get update
+apt-get upgrade
 apt-get install git make just gnupg openssl-tool -y
 ```
 ### 2. Clone Repositori
