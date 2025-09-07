@@ -55,6 +55,7 @@ make install
 ```
 </details><br>
 
+<a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.1&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a>
 
 > Checker-Scammer alat identifikasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
 
