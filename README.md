@@ -71,7 +71,6 @@ make install
     <!-- Tambahan kontributor lainnya -->
          <td align="center"><a href="https://github.com/Xenzi-XN1"><img src="https://avatars.githubusercontent.com/u/82303963?v=4" width="100px;" alt=""/><br /><sub><b>Xenzi</b </sub></a><br />💻 🎨</td>
     <td align="center"><a href="https://github.com/Dra-Ganzz"><img src="https://avatars.githubusercontent.com/u/173580864?v=4" width="100px;" alt=""/><br /><sub><b>Vindra</b </sub></a><br />💻 🎨</td>
-     <td align="center"><a href="https://github.com/Lubebansokhekel"><img src="https://avatars.githubusercontent.com/u/181061263?v=4" width="100px;" alt=""/><br /><sub><b>Galirus</b </sub></a><br />💻 🎨</td>
     <td align="center"><a href="https://github.com/fahadsyihab06"><img src="https://avatars.githubusercontent.com/u/133946867?v=4" width="100px;" alt=""/><br /><sub><b>TC20</b </sub></a><br />💻 🎨</td>
     <td align="center"><a href="https://github.com/Cyber404119"><img src="https://avatars.githubusercontent.com/u/192098761?v=4" width="100px;" alt=""/><br /><sub><b>Tony</b </sub></a><br />💻 🎨</td>
   </tr>
