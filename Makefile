@@ -56,7 +56,7 @@ install-py: detectCLI
 	if command -v python3 >/dev/null 2>&1; then \
 		echo "[✓] Python3 ditemukan"; \
 		echo "[>] Menginstall Python package: $(PACKAGEPY)..."; \
-		pip3 install $(PACKAGEPY); \
+		pip install $(PACKAGEPY); \
 		echo "[>] Python Berhasil DI setup"; \
 	else \
 		echo "[✗] Python3 tidak ditemukan! Silakan install terlebih dahulu."; \
