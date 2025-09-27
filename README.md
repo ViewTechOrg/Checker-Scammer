@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/static/v1?label=ViewTechTeam&color=green&message=+&logo=nano&logoColor=white&style=for-the-badge">
   <img src="https://img.shields.io/static/v1?label=Author&color=green&message=viewTech+ORG&logo=nim&logoColor=white&style=for-the-badge"><br>
   <img src="https://img.shields.io/github/stars/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
-  <img src="https://img.shields.io/static/v1?label=Version&color=green&message=3.0.2&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
+  <img src="https://img.shields.io/static/v1?label=Version&color=green&message=3.0.3&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
   <img src="https://img.shields.io/github/contributors/ViewTechOrg/Checker-Scammer?logo=apache&style=for-the-badge"><br>
   <img src="https://img.shields.io/static/v1?label=Termux&color=green&message=+&logo=Iterm2&logoColor=white&style=flat">
   <img src="https://img.shields.io/static/v1?label=Python&color=green&message=3.12&logo=python&logoColor=white&style=flat">
@@ -81,7 +81,7 @@ make install
 
 <br>
 <!-- <a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a> -->
-<a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/744004.svg" /></a>
+<a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.3&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/744004.svg" /></a>
 
 > Checker-Scammer alat investigasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
 
