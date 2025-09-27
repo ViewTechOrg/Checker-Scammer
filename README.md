@@ -69,6 +69,8 @@ make fix
 make install
 ```
 
+> di sarankan saat menjalankan perintah/command harus satu persatu
+
 ## 📸 Screenshots
 
 | 🔍 Osint Nomor | 📱 Analisis Nomor | ☠️ Doxing Nomor |
