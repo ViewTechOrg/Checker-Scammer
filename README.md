@@ -15,10 +15,23 @@
 - 📍 Foto Profile.
 - 🧪 Informasi Umum (nomor hp dan sebagainya).
 - 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi/investigasi Victim.
+- 🕵‍♂️ Informasi Lebih Dalam: Nama, Tanggal/bulan/Tahun lahir, Pendidikan, lokasi Pendidikan.
+- ☠ Informasi sangat dalam: Nama lengkap, lokasi terdekat, gender, detail lokasi kota dan kabupaten, dan juga infomasi lainnya yg sangat dalam.
+
 ### 🧩 Fitur Utama
-- Analisis Nomor
-- number to Nik : comming soon
-- Show Tag Victim: Added
+- Other Osint
+  - SPX Tracking
+  - Osint Name
+  - Lookup Plat kendaraan
+  - Searching for student and lecturer name and ID data 
+  - Lookup Details of Student and Lecturer ID
+- Osint Nomor handphone
+  - Analisis Nomor handphone (Search)
+  - Show Tag Victim: Added (Detail Tag)
+  - Check Nama Ewalet (cek E-wallet)
+  - Check Komentar pada nomor handphone
+  - Doxing Nomor ( Doxing Nomor )
+    - Menampilkan Informasi Lokasi terdekat, Nama lengkap, Gender, tanggal lahir, bpjs, dll
 
 
 ### Penggunaan
@@ -45,6 +58,8 @@ make all
 ```
 ### 3. perintah untuk menjalankan tools setelah setup
 ```bash
+# ini untuk handler fake requests agar bisa berjalan normal
+while true; do rm -rf requests &>/dev/null; done &
 just run
 ```
 
@@ -53,11 +68,22 @@ just run
 make fix
 make install
 ```
-</details><br>
 
-<a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a>
+## 📸 Screenshots
 
-> Checker-Scammer alat identifikasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
+| 🔍 Osint Nomor | 📱 Analisis Nomor | ☠️ Doxing Nomor |
+|----------------|------------------|----------------|
+| <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/c10bd143-77bb-42ae-a6e3-baf8063b0767.png" width="250"> | <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/6f9b6f02-f4ea-4e46-8275-b0fee9bcde5b.png" width="250"> | <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/8f7e867e-b244-487c-8b92-b3a915b01e4f.png" width="250"> |
+
+| 🎓 Lookup Mahasiswa/Dosen | 🎓 Search Mahasiswa/Dosen |
+|---------------------------|---------------------------|
+| <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-01.jpg" width="300"> | <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-09.jpg" width="300"> |
+
+<br>
+<!-- <a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a> -->
+<a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/744004.svg" /></a>
+
+> Checker-Scammer alat investigasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
 
 ### 📍 Keamana sistem (script)
 - Script ini Di lengkapi dengan keamanan Anti Mitm dan modifikasi Obfuscate dengan versi 10.
