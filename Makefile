@@ -1,4 +1,4 @@
-# version 0.0.1
+# version 0.0.2
 # created by : Team ViewTech
 # date       : 2025-06-05 | 08.47 WIB
 # developer  : Xenzi & Polygon (pejuang kentang)
@@ -78,6 +78,7 @@ fix:
 	pip uninstall requests -y
 	pip uninstall psutil -y
 	pip install requests
+    pip install "urllib3<2"
 
 all: install
 
