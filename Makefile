@@ -78,7 +78,7 @@ fix:
 	pip uninstall requests -y
 	pip uninstall psutil -y
 	pip install requests
-    pip install "urllib3<2"
+	pip install "urllib3<2"
 
 all: install
 
