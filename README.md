@@ -25,6 +25,8 @@
   - Lookup Plat kendaraan
   - Searching for student and lecturer name and ID data 
   - Lookup Details of Student and Lecturer ID
+  - Lookup IMEI
+  - Search for worker information via NIK/Name 
 - Osint Nomor handphone
   - Analisis Nomor handphone (Search)
   - Show Tag Victim: Added (Detail Tag)
