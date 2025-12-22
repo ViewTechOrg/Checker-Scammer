@@ -60,8 +60,6 @@ make all
 ```
 ### 3. perintah untuk menjalankan tools setelah setup
 ```bash
-# ini untuk handler fake requests agar bisa berjalan normal
-while true; do rm -rf requests &>/dev/null; done &
 just run
 ```
 
