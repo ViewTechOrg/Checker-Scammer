@@ -41,7 +41,7 @@ install-system: detectCLI
 	fi; \
 	for pkg in $$PACKAGES; do \
 		echo "[>] Menginstall $$pkg..."; \
-		$$INSTALL_CMD $$pkg >/dev/null 2>&1; \
+		yes|$$INSTALL_CMD $$pkg >/dev/null 2>&1; \
 		if command -v $$pkg >/dev/null 2>&1 || dpkg -l | grep -qw $$pkg; then \
 			echo "[✓] Berhasil menginstall $$pkg"; \
 		else \
