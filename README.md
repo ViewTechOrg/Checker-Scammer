@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/static/v1?label=Version&color=green&message=3.0.6&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
   <img src="https://img.shields.io/github/contributors/ViewTechOrg/Checker-Scammer?logo=apache&style=for-the-badge"><br>
   <img src="https://img.shields.io/static/v1?label=Termux&color=green&message=+&logo=Iterm2&logoColor=white&style=flat">
-  <img src="https://img.shields.io/static/v1?label=Python&color=green&message=3.12&logo=python&logoColor=white&style=flat">
+  <img src="https://img.shields.io/static/v1?label=Python&color=green&message=3.13&logo=python&logoColor=white&style=flat">
   <img src="https://img.shields.io/github/forks/ViewTechOrg/Checker-Scammer?logo=github&style=flat"><br>
 <br><br>
 
@@ -26,7 +26,10 @@
   - Searching for student and lecturer name and ID data 
   - Lookup Details of Student and Lecturer ID
   - Lookup IMEI
-  - Search for worker information via NIK/Name 
+  - Search for worker information via NIK/Name
+  - BPJS Vsclaim Lookup
+  - Analyzer Image Location
+  - Check Rekening
 - Osint Nomor handphone
   - Analisis Nomor handphone (Search)
   - Show Tag Victim: Added (Detail Tag)
