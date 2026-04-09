@@ -30,6 +30,13 @@
   - BPJS Vsclaim Lookup
   - Analyzer Image Location
   - Check Rekening
+  - Check PTK
+  - Nik To Kk
+  - Nik To Nomor
+  - Nik To Email
+  - Search Doctor Via Name
+  - Lookup Id Doctor
+  - Search Guru 
 - Osint Nomor handphone
   - Analisis Nomor handphone (Search)
   - Show Tag Victim: Added (Detail Tag)
@@ -73,6 +80,7 @@ make install
 ```
 
 > di sarankan saat menjalankan perintah/command harus satu persatu
+</details>
 
 ## 📸 Screenshots
 
@@ -85,6 +93,40 @@ make install
 | <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-01.jpg" width="300"> | <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-09.jpg" width="300"> |
 
 <br>
+
+## 📦 Paket Harga
+
+### 🟢 Plan Pemula (Beginner)
+*Cocok untuk coba-coba & penggunaan ringan*
+
+| Durasi     | Harga       |
+|------------|------------|
+| 3 Hari     | Rp 15.000  |
+| 1 Minggu   | Rp 40.000  |
+| 1 Bulan    | Rp 150.000 |
+
+---
+
+### 🚀 Plan Profesional (Expert)
+*Untuk penggunaan maksimal tanpa batasan*
+
+| Durasi     | Harga       |
+|------------|------------|
+| 1 Hari     | Rp 90.000  |
+| 1 Minggu   | Rp 200.000 |
+| 1 Bulan    | Rp 500.000 |
+
+---
+
+### 🔎 Perbedaan
+
+| Fitur        | Pemula | Expert |
+|--------------|--------|--------|
+| Akses Fitur  | Terbatas | Full Akses |
+| Limit Harian | Kecil  | Besar (Prioritas) |
+
+<br>
+
 <!-- <a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a> -->
 <a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.3&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/744004.svg" /></a>
 
