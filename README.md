@@ -112,7 +112,7 @@ make install
 
 | Durasi     | Harga       |
 |------------|------------|
-| 1 Hari     | Rp 90.000  |
+| 3 Hari     | Rp 90.000  |
 | 1 Minggu   | Rp 200.000 |
 | 1 Bulan    | Rp 500.000 |
 
