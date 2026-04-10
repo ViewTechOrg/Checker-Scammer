@@ -101,9 +101,9 @@ make install
 
 | Durasi     | Harga       |
 |------------|------------|
-| 3 Hari     | Rp 15.000  |
-| 1 Minggu   | Rp 40.000  |
-| 1 Bulan    | Rp 150.000 |
+| 3 Hari     | Rp 25.000  |
+| 1 Minggu   | Rp 50.000  |
+| 1 Bulan    | Rp 160.000 |
 
 ---
 
@@ -112,9 +112,9 @@ make install
 
 | Durasi     | Harga       |
 |------------|------------|
-| 3 Hari     | Rp 90.000  |
-| 1 Minggu   | Rp 200.000 |
-| 1 Bulan    | Rp 500.000 |
+| 3 Hari     | Rp 102.000  |
+| 1 Minggu   | Rp 212.000 |
+| 1 Bulan    | Rp 512.000 |
 
 ---
 
