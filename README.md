@@ -11,7 +11,7 @@
 
   **Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan data yang sudah di kumpulkan, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
 
-### 🔎 Data yang Dikumpulkan
+### 🔎 Data yang Didapatkan
 - 📍 Foto Profile.
 - 🧪 Informasi Umum (nomor hp dan sebagainya).
 - 🧾 Informasi Analisis: Dari Perhitungan algoritma untuk mengidentifikasi/investigasi Victim.
