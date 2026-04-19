@@ -34,6 +34,7 @@
   - Nik To Kk
   - Nik To Nomor
   - Nik To Email
+  - Dump db (eklusif: new)
   - Search Doctor Via Name
   - Lookup Id Doctor
   - Search Guru 
