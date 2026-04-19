@@ -155,11 +155,11 @@ make install
 <div>
 <a href="https://vm.tiktok.com/ZSr3aQB1W/" target="_blank">
   <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok">
-</a><br>
+</a> 
 
 <a href="https://www.youtube.com/@ViewTech_Or" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
-</a><br>
+</a> 
 
 <a href="https://www.instagram.com/viewtech4484/" target="_blank">
   <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
