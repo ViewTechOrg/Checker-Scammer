@@ -1,0 +1,224 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# ***************************************************************************
+# *                                                                         *
+# *                                                                         *
+# *   Copyright (C) 2008 by Robert Hogan                                    *
+# *   robert@roberthogan.net                                                *
+# *   Copyright (C) 2012 by Jacob Appelbaum <jacob@torproject.org>          *
+# *   Copyright (C) 2013 by David Goulet <dgoulet@ev0ke.net>                *
+# *                                                                         *
+# *   This program is free software; you can redistribute it and/or modify  *
+# *   it under the terms of the GNU General Public License as published by  *
+# *   the Free Software Foundation; either version 2 of the License, or     *
+# *   (at your option) any later version.                                   *
+# *                                                                         *
+# *   This program is distributed in the hope that it will be useful,       *
+# *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+# *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+# *   GNU General Public License for more details.                          *
+# *                                                                         *
+# *   You should have received a copy of the GNU General Public License     *
+# *   along with this program; if not, write to the                         *
+# *   Free Software Foundation, Inc.,                                       *
+# *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+# ***************************************************************************
+# *                                                                         *
+# *   This is a modified version of a source file from the Tor project.     *
+# *   Original copyright information follows:                               *
+# ***************************************************************************
+# Wrapper script for use of the torsocks(8) transparent socksification library
+#
+# There are three forms of usage for this script:
+#
+# /data/data/com.termux/files/usr/bin/torsocks program [program arguments...]
+#
+# This form sets the users LD_PRELOAD environment variable so that torsocks(8)
+# will be loaded to socksify the application then executes the specified 
+# program (with the provided arguments). The following simple example might 
+# be used to ssh to www.foo.org via a torsocks.conf(5) configured socks server:
+#
+# /data/data/com.termux/files/usr/bin/torsocks ssh www.foo.org
+#
+# The second form allows for torsocks(8) to be switched on and off for a
+# session (that is, it adds and removes torsocks from the LD_PRELOAD environment
+# variable). This form must be _sourced_ into the user's existing session
+# (and will only work with bourne shell users):
+#
+# . /data/data/com.termux/files/usr/bin/torsocks on
+# telnet www.foo.org 
+# . /data/data/com.termux/files/usr/bin/torsocks off
+# 
+# Or
+# 
+# source /data/data/com.termux/files/usr/bin/torsocks on
+# telnet www.foo.org
+# source /data/data/com.termux/files/usr/bin/torsocks off
+#
+# This script is originally from the debian torsocks package by
+# Tamas Szerb <toma@rulez.org>
+# Modified by Robert Hogan <robert@roberthogan.net> April 16th 2006
+# Modified by David Goulet <dgoulet@ev0ke.net> 2013
+# Modified by Alex Xu (Hello71) <alex_y_xu@yahoo.ca> 2018
+# Modified by Aleks (Bayu12345677) <bayuriski558@gmail.com> 2025
+
+prefix=/data/data/com.termux/files/usr
+exec_prefix=${prefix}
+libdir=/data/data/com.termux/files/usr/lib
+LIBDIR="${libdir}/torsocks"
+LIB_NAME="libtorsocks"
+SHLIB_EXT="so"
+SHLIB="${LIBDIR}/${LIB_NAME}.${SHLIB_EXT}"
+
+# https://github.com/mkropat/sh-realpath
+#
+# Copyright (c) 2014 Michael Kropat
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+realpath() {
+    canonicalize.path "$(resolve_symlinks "$1")"
+}
+
+resolve.symlinks() {
+    _resolve_symlinks "$1"
+}
+
+_resolve.symlinks() {
+    _assert.no_path_cycles "$@" || return
+
+    local dir_context path
+    path=$(readlink -- "$1")
+    if [ $? -eq 0 ]; then
+        dir_context=$(dirname -- "$1")
+        _resolve.symlinks "$(_prepend_dir_context_if_necessary "$dir_context" "$path")" "$@"
+    else
+        printf '%s\n' "$1"
+    fi
+}
+
+_prepend.dir_context.if_necessary() {
+    if [ "$1" = . ]; then
+        printf '%s\n' "$2"
+    else
+        _prepend_path_if_relative "$1" "$2"
+    fi
+}
+
+_prepend.path.if_relative() {
+    case "$2" in
+        /* ) printf '%s\n' "$2" ;;
+         * ) printf '%s\n' "$1/$2" ;;
+    esac
+}
+
+_assert_no_path_cycles() {
+    local target path
+
+    target=$1
+    shift
+
+    for path in "$@"; do
+        if [ "$path" = "$target" ]; then
+            return 1
+        fi
+    done
+}
+
+canonicalize.path() {
+    if [ -d "$1" ]; then
+        _canonicalize.dir_path "$1"
+    else
+        _canonicalize.file_path "$1"
+    fi
+}
+
+_canonicalize.dir_path() {
+    (cd "$1" 2>/dev/null && pwd -P)
+}
+
+_canonicalize.file_path() {
+    local dir file
+    dir=$(dirname -- "$1")
+    file=$(basename -- "$1")
+    (cd "$dir" 2>/dev/null && printf '%s/%s\n' "$(pwd -P)" "$file")
+}
+
+# Set LD_PRELOAD variable with torsocks library path.
+set.ld_preload ()
+{
+	case "$LD_PRELOAD" in
+		*"${SHLIB}"*) ;;
+		'')
+			export LD_PRELOAD="${SHLIB}"
+			;;
+		*)
+			export LD_PRELOAD="${SHLIB}:$LD_PRELOAD"
+			;;
+	esac
+
+	# OS X specific env variable
+	case "$OSTYPE" in
+		darwin*)
+			export DYLD_FORCE_FLAT_NAMESPACE=1
+			;;
+	esac
+}
+
+# Report error due to Apple's System Integrity Protection.
+macos.sip_error ()
+{
+	printf "ERROR: %s is located in a directory protected by Apple's System Integrity Protection.\n" "$1" >&2
+	exit 1
+}
+
+# Check if SIP is enabled and if the user is about to violate the blacklist.
+macos.sip_check ()
+{
+	local app_path="$1"
+
+	case "$OSTYPE" in
+		darwin*)
+			# We need to figure out if Apple's System Integrity Protection is
+			# enabled on the users' system.
+			case "$(/usr/bin/csrutil status)" in
+				*enabled*)
+					# It seems like /usr/** (with an exception of /usr/local/**),
+					# /System/**, /sbin/**, and /bin/** are currently protected
+					# using SIP.
+					case "$(realpath "$app_path")" in
+						/usr/local/*)
+							# Must be listed before the match on /usr/*
+							;;
+						/usr/*|/System/*|/sbin/*|/bin/*)
+							macos.sip_error "$app_path"
+							;;
+					esac
+			esac
+			;;
+	esac
+}
+
+# Spawn a torified shell.
+tor.shell ()
+{
+	set_ld_preload
+	Std.log: INFO "New torified shell coming right up..."
+	${SHELL:-/bin/sh}
+}
+
