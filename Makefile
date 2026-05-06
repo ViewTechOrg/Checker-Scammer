@@ -1,4 +1,4 @@
-# version 0.0.2
+# version 0.0.3
 # created by : Team ViewTech
 # date       : 2025-06-05 | 08.47 WIB
 # developer  : Xenzi & Polygon (pejuang kentang)
@@ -69,7 +69,12 @@ install-py: detectCLI
 # UPDATE REPO 
 update: detectCLI
 	@echo "[>] Melakukan update ..";sleep 1
-	@git pull
+	@cd
+	@rm -rf Checker-Scammer
+	@git clone https://github.com/ViewTechOrg/Checker-Scammer
+	@cd Checker-Scammer
+	@echo "[?] aplikasi sudah di update ke versi terbaru" 
+	@echo "[>] jalankan perintah just run" 
 
 install: install-system install-py
 
