@@ -1,15 +1,47 @@
-<h1 align="center"><code>Checker-Scammer</code></h1> <p align="center"> <img src="https://github.com/ViewTechOrg/Checker-Scammer/blob/master/Img/photo_2025-09-27_20-12-43.jpg" width="590"><br><br>
+<h1 align="center"><code>Checker-Scammer</code></h1>
+
+<p align="center">
+  <i>🛡️ Cek sebelum kena tipu — teknologi investigasi di ujung jari Anda.</i>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ViewTechOrg/Checker-Scammer/blob/master/Img/photo_2025-09-27_20-12-43.jpg" width="590"><br><br>
   <img src="https://img.shields.io/static/v1?label=ViewTechTeam&color=green&message=+&logo=nano&logoColor=white&style=for-the-badge">
   <img src="https://img.shields.io/static/v1?label=Author&color=green&message=viewTech+ORG&logo=nim&logoColor=white&style=for-the-badge"><br>
   <img src="https://img.shields.io/github/stars/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
   <img src="https://img.shields.io/static/v1?label=Version&color=green&message=3.0.6&logo=Clockify&logoColor=white&style=for-the-badge"><br><br>
-  <img src="https://img.shields.io/github/contributors/ViewTechOrg/Checker-Scammer?logo=apache&style=for-the-badge"><br>
-  <img src="https://img.shields.io/static/v1?label=Termux&color=green&message=+&logo=Iterm2&logoColor=white&style=flat">
-  <img src="https://img.shields.io/static/v1?label=Python&color=green&message=3.13&logo=python&logoColor=white&style=flat">
-  <img src="https://img.shields.io/github/forks/ViewTechOrg/Checker-Scammer?logo=github&style=flat"><br>
-<br><br>
+  <img src="https://img.shields.io/github/contributors/ViewTechOrg/Checker-Scammer?logo=apache&style=for-the-badge">
+  <img src="https://img.shields.io/github/issues/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
+  <img src="https://img.shields.io/github/last-commit/ViewTechOrg/Checker-Scammer?logo=git&logoColor=white&style=for-the-badge"><br>
+  <img src="https://img.shields.io/static/v1?label=Termux&color=green&message=+&logo=Iterm2&logoColor=white&style=for-the-badge">
+  <img src="https://img.shields.io/static/v1?label=Python&color=green&message=3.13&logo=python&logoColor=white&style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/ViewTechOrg/Checker-Scammer?logo=github&style=for-the-badge">
+  <img src="https://img.shields.io/github/license/ViewTechOrg/Checker-Scammer?style=for-the-badge"><br>
+</p>
 
-  **Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan data yang sudah di kumpulkan, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+---
+
+## 📚 Daftar Isi
+- [Tentang](#-tentang)
+- [Data yang Didapatkan](#-data-yang-didapatkan)
+- [Fitur Utama](#-fitur-utama)
+- [Prasyarat](#-prasyarat)
+- [Cara Install & Penggunaan](#cara-install--penggunaan)
+- [Screenshots](#-screenshots)
+- [Paket Harga](#-paket-harga)
+- [FAQ / Troubleshooting](#-faq--troubleshooting)
+- [Keamanan Sistem](#-keamanan-sistem-script)
+- [Kontributor](#-kontributor)
+- [Sosial Media](#sosial-media)
+- [Disclaimer](#%EF%B8%8F-disclaimer)
+
+---
+
+## 📖 Tentang
+
+**Checker-Scammer** adalah alat Penyelidikan berbasis CLI yang memanfaatkan teknik Perhitungan berdasarkan data yang sudah di kumpulkan, berfungsi untuk mengidentifikasi sebuah nomor platform whatsapp apakah masuk golongan scammer atau seseorang yang aman sebelum memulai transaksi, di era sekarang yang serba online tidak sedikit pula aksi kejahatan seperti scammer dan penipuan banyak bermunculan, dengan adanya alat ini di harapkan dapat membantu mengatasi masalah penipuan/scam saat bertransaksi.
+
+---
 
 ### 🔎 Data yang Didapatkan
 - 📍 Foto Profile.
@@ -18,34 +50,50 @@
 - 🕵‍♂️ Informasi Lebih Dalam: Nama, Tanggal/bulan/Tahun lahir, Pendidikan, lokasi Pendidikan.
 - ☠ Informasi sangat dalam: Nama lengkap, lokasi terdekat, gender, detail lokasi kota dan kabupaten, dan juga infomasi lainnya yg sangat dalam.
 
+---
+
 ### 🧩 Fitur Utama
-- Other Osint
-  - SPX Tracking
-  - Osint Name
-  - Lookup Plat kendaraan
-  - Searching for student and lecturer name and ID data 
-  - Lookup Details of Student and Lecturer ID
+- Osint Lainnya
+  - Pelacakan SPX
+  - Osint Nama
+  - Lookup Plat Kendaraan
+  - Cari Nama & ID Mahasiswa/Dosen
+  - Lookup Detail ID Mahasiswa/Dosen
   - Lookup IMEI
-  - Search for worker information via NIK/Name
-  - BPJS Vsclaim Lookup
-  - Analyzer Image Location
-  - Check Rekening
-  - Check PTK
-  - Nik To Kk
-  - Nik To Nomor
-  - Nik To Email
-  - Dump db (eklusif: new)
-  - Search Doctor Via Name
-  - Lookup Id Doctor
-  - Search Guru 
-- Osint Nomor handphone
-  - Analisis Nomor handphone (Search)
-  - Show Tag Victim: Added (Detail Tag)
-  - Check Nama Ewalet (cek E-wallet)
-  - Check Komentar pada nomor handphone
-  - Doxing Nomor ( Doxing Nomor )
+  - Cari Informasi Pekerja via NIK/Nama
+  - Lookup BPJS Vsclaim
+  - Analisis Lokasi Gambar
+  - Cek Rekening
+  - Cek PTK
+  - NIK ke KK
+  - NIK ke Nomor
+  - NIK ke Email
+  - Dump DB (Eksklusif: Baru)
+  - Cari Dokter via Nama
+  - Lookup ID Dokter
+  - Cari Guru
+- Osint Nomor Handphone
+  - Analisis Nomor Handphone (Pencarian)
+  - Tampilkan Tag Korban: Ditambahkan (Detail Tag)
+  - Cek Nama E-Wallet
+  - Cek Komentar pada Nomor Handphone
+  - Doxing Nomor
     - Menampilkan Informasi Lokasi terdekat, Nama lengkap, Gender, tanggal lahir, bpjs, dll
 
+---
+
+## 🖥️ Prasyarat
+
+Pastikan perangkat Anda memenuhi persyaratan berikut sebelum melakukan instalasi:
+
+| Persyaratan | Keterangan |
+|-------------|-----------|
+| OS | Termux (Android) atau Linux |
+| Python | Versi 3.13 ke atas |
+| Storage | Minimal 200MB ruang kosong |
+| Paket | `git`, `make`, `just`, `gnupg`, `openssl-tool` |
+
+---
 
 ### Penggunaan
 1. Gunakan Ukuran layar untuk potrait x: 101, y: 35 sedangkan landscape x: 181, y: 70, untuk cara mengatur nya bisa dengan mencubit layar.
@@ -83,6 +131,8 @@ make install
 > di sarankan saat menjalankan perintah/command harus satu persatu
 </details>
 
+---
+
 ## 📸 Screenshots
 
 | 🔍 Osint Nomor | 📱 Analisis Nomor | ☠️ Doxing Nomor |
@@ -93,7 +143,7 @@ make install
 |---------------------------|---------------------------|
 | <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-01.jpg" width="300"> | <img src="https://github.com/ViewTechOrg/Server/blob/main/Checker-Scammer/img/photo_2025-09-27_08-42-09.jpg" width="300"> |
 
-<br>
+---
 
 ## 📦 Paket Harga
 
@@ -121,49 +171,118 @@ make install
 
 ### 🔎 Perbedaan
 
-| Fitur        | Pemula | Expert |
-|--------------|--------|--------|
-| Akses Fitur  | Terbatas | Full Akses |
-| Limit Harian | Kecil  | Besar (Prioritas) |
+| Fitur        | 🟢 Pemula | 🚀 Expert |
+|--------------|-----------|-----------|
+| Akses Fitur  | ❌ Terbatas | ✅ Full Akses |
+| Limit Harian | ❌ Kecil   | ✅ Besar (Prioritas) |
 
-<br>
+---
 
-<!-- <a href="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.2&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/BSDFRt8JZ07U8ME2cF743LpGz.svg" /></a> -->
-<a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.3&logo=gojek&logoColor=white&style=flat"><br><img src="https://asciinema.org/a/744004.svg" /></a>
+### 🛒 Cara Pembelian / Hubungi Kami
+
+Untuk pembelian lisensi atau pertanyaan lebih lanjut, hubungi kami melalui:
+
+<div>
+<a href="https://vm.tiktok.com/ZSr3aQB1W/" target="_blank">
+  <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok">
+</a>
+<a href="https://www.youtube.com/@ViewTech_Or" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
+</a>
+<a href="https://www.instagram.com/viewtech4484/" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+</a>
+</div>
+
+---
+
+<a href="https://asciinema.org/a/744004" target="_blank"><img src="https://img.shields.io/static/v1?label=Review&color=green&message=3.0.3&logo=gojek&logoColor=white&style=for-the-badge"><br><img src="https://asciinema.org/a/744004.svg" /></a>
 
 > Checker-Scammer alat investigasi Berdasarkan Data yang ada `(Sedia Payung Sebelum Hujan)`,`(gunakanlah Checker-Scammer Viewtech Maka Anda akan terhindar dari penipuan)`
 
-### 📍 Keamana sistem (script)
-- Script ini Di lengkapi dengan keamanan Anti Mitm dan modifikasi Obfuscate dengan versi 10.
-  
+---
+
+## ❓ FAQ / Troubleshooting
+
+<details>
+<summary><strong>Error python monitoring saat menjalankan tools?</strong></summary>
+
+Jalankan perintah berikut secara berurutan, lalu coba jalankan kembali:
+```bash
+make fix
+make install
+just run
+```
+</details>
+
+<details>
+<summary><strong>Perintah `just` tidak ditemukan?</strong></summary>
+
+Pastikan paket `just` sudah terinstal:
+```bash
+apt-get install just -y
+```
+</details>
+
+<details>
+<summary><strong>Tampilan tools berantakan / tidak rapi?</strong></summary>
+
+Sesuaikan ukuran layar terminal Anda:
+- **Portrait**: x: 101, y: 35
+- **Landscape**: x: 181, y: 70
+
+Cara mengatur: cubit layar untuk menyesuaikan ukuran.
+</details>
+
+<details>
+<summary><strong>Bagaimana cara membeli lisensi?</strong></summary>
+
+Hubungi kami melalui media sosial yang tertera di bagian **Sosial Media** atau **Cara Pembelian** di atas.
+</details>
+
+---
+
+## 📍 Keamanan Sistem (Script)
+- Script ini dilengkapi dengan keamanan Anti MITM dan modifikasi Obfuscate dengan versi 10.
+
+---
+
 ## ✨ Kontributor
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Bayu12345677"><img src="https://avatars.githubusercontent.com/u/86620608?v=4" width="100px;" alt=""/><br /><sub><b>Bayu12345677</b </sub></a><br />💻 📢 🎨</td>
+    <td align="center"><a href="https://github.com/Bayu12345677"><img src="https://avatars.githubusercontent.com/u/86620608?v=4" width="100px;" alt=""/><br /><sub><b>Bayu12345677</b></sub></a><br />💻 📢 🎨</td>
     <!-- Tambahan kontributor lainnya -->
-         <td align="center"><a href="https://github.com/Xenzi-XN1"><img src="https://avatars.githubusercontent.com/u/82303963?v=4" width="100px;" alt=""/><br /><sub><b>Xenzi</b </sub></a><br />💻 🎨</td>
-    <td align="center"><a href="https://github.com/Dra-Ganzz"><img src="https://avatars.githubusercontent.com/u/173580864?v=4" width="100px;" alt=""/><br /><sub><b>Vindra</b </sub></a><br />💻 🎨</td>
-    <td align="center"><a href="https://github.com/fahadsyihab06"><img src="https://avatars.githubusercontent.com/u/133946867?v=4" width="100px;" alt=""/><br /><sub><b>TC20</b </sub></a><br />💻 🎨</td>
-    <td align="center"><a href="https://github.com/Cyber404119"><img src="https://avatars.githubusercontent.com/u/192098761?v=4" width="100px;" alt=""/><br /><sub><b>Tony</b </sub></a><br />💻 🎨</td>
+    <td align="center"><a href="https://github.com/Xenzi-XN1"><img src="https://avatars.githubusercontent.com/u/82303963?v=4" width="100px;" alt=""/><br /><sub><b>Xenzi</b></sub></a><br />💻 🎨</td>
+    <td align="center"><a href="https://github.com/Dra-Ganzz"><img src="https://avatars.githubusercontent.com/u/173580864?v=4" width="100px;" alt=""/><br /><sub><b>Vindra</b></sub></a><br />💻 🎨</td>
+    <td align="center"><a href="https://github.com/fahadsyihab06"><img src="https://avatars.githubusercontent.com/u/133946867?v=4" width="100px;" alt=""/><br /><sub><b>TC20</b></sub></a><br />💻 🎨</td>
+    <td align="center"><a href="https://github.com/Cyber404119"><img src="https://avatars.githubusercontent.com/u/192098761?v=4" width="100px;" alt=""/><br /><sub><b>Tony</b></sub></a><br />💻 🎨</td>
   </tr>
 </table>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## SOSIAL MEDIA
+---
+
+## Sosial Media
 <div>
 <a href="https://vm.tiktok.com/ZSr3aQB1W/" target="_blank">
   <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok">
-</a> 
+</a>
 
 <a href="https://www.youtube.com/@ViewTech_Or" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
-</a> 
+</a>
 
 <a href="https://www.instagram.com/viewtech4484/" target="_blank">
   <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
-</a><br>
+</a>
 </div>
 
-> Copyright C ViewTech Team 2025
+---
+
+## ⚠️ Disclaimer
+
+> Alat ini dibuat **hanya untuk tujuan edukasi dan perlindungan diri** dari penipuan/scam. Segala bentuk penyalahgunaan alat ini di luar tujuan tersebut sepenuhnya menjadi **tanggung jawab pengguna**. Developer dan tim ViewTech tidak bertanggung jawab atas segala kerugian atau pelanggaran hukum yang timbul akibat penggunaan yang tidak sesuai ketentuan.
+
+> Copyright © ViewTech Team 2025
