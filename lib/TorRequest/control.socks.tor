@@ -1,0 +1,126 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# tor requets by pejuang kentang
+# framework bash ID
+
+import.source [argument:parser.app]
+import.source [TorRequest:config.tor]
+
+bind_default="127.0.0.1"
+bind_port="9050"
+bind_control="9051"
+datadirectory="${PREFIX}/var/lib/tor"
+daemonBIND=0 # default
+Hashing="alex"
+
+
+TEMP=$(mktemp -t __CONFIG_TORSOCKS__.XXX)
+
+if test "$_" == "$0"; then {
+	DEBUG: STATUS module
+	exit 0
+};fi
+
+function Urandom_useragent(){ local UASOURCE=$(curl -sL "https://raw.githubusercontent.com/tamimibrahim17/List-of-user-agents/refs/heads/master/Chrome.txt" --insecure --max-time 10); cat < <(sort -R <<< "$UASOURCE"|head -1); }
+
+function __TOR__MAIN__CONFIG(){
+	local torMode="${1:-0}"
+    obsffmeki=$(command -v obfs4proxy)
+	bridgues=$(curl -sL "https://raw.githubusercontent.com/scriptzteam/Tor-Bridges-Collector/refs/heads/main/bridges-obfs4" --insecure|sort -R|head -10|awk '{ print "Bridge " $0 }')
+	# bridgues=$(curl -sL "https://raw.githubusercontent.com/scriptzteam/Tor-Bridges-Collector/refs/heads/main/bridges-obfs4" --insecure|sort -R|head -7|awk '{ print "Bridge " $0 }')
+	#bridgues=$(curl -sL "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/refs/heads/master/tor/bridges.txt" --insecure|sort -R|head -7|awk '{ print "Bridge " $0 }')
+	declare -g default_conf=$(cat <<< "
+DataDirectory ${PREFIX}/var/lib/tor
+ClientTransportPlugin obfs4 exec ${obsffmeki}
+
+SocksPort 9050
+ControlPort 9051
+UseBridges 1
+DNSPort 5353
+HTTPTunnelPort 8118
+TransPort 9040
+
+AvoidDiskWrites 1
+ExitNodes {id}
+
+RunAsDaemon ${torMode:-0}
+HashedControlPassword 16:D1C25461D735972A60E5C6633D9085EF93714D246F6F42832D611E12E3
+
+CookieAuthentication 1
+
+Bridge obfs4 46.226.105.97:9909 610228346C6B183FF47EBCD2CC921D0202023C92 cert=wWKBMC29yiRZ/CbGo9QDRZQjkMmMDQB0IsqrsJ+BO/6ZxRzMhfrFqO3D9+k+ccvQZDA2GA iat-mode=0
+Bridge obfs4 46.226.106.97:50627 6CD33ED87B774C516BDD18C41F2061B7078C0ADB cert=hY332PGesAut59U5dpDKwRwrMlhw744/bxWs8VgLDabSTVN7XcFmuS5nFGBSsRDx8bipIQ iat-mode=0
+Bridge 185.56.83.83:9001 CBCC85F335E20705F791CFC8685951C90E24134D
+Bridge 88.198.35.49:443 ED9A731373456FA071C12A3E63E2C8BEF0A6E721
+Bridge 185.220.100.243:9000 9D5A7A81BC6194555CE751F75FB196E4A3982CC5
+Bridge 188.90.165.209:9001 A7C2DF525D373D6A0C4F2540C3927ADF511124CC
+Bridge 152.89.92.206:443 BC7BBFBBF4AE5469405591D28BF3EF8071B0F32E
+Bridge 178.162.197.91:443 26F5D0F28B756CDB8FEF0081C8F0A26FCEB5F943
+
+ExitRelay 1
+StrictNodes 1")
+	}
+function SETUPTOR(){
+	function 0x285002674(){
+		# check file dan zero value
+		DEBUG: "
+			jika tidak di temukan file path atau mengembalikan nilai default
+			maka otomatis akan menggunakan config default
+		"
+
+		if ${TorDaemond}; then { __TOR__MAIN__CONFIG "1" && { __torLOG_status__=$(Std.log: DEBUG "Berhasil Menjalankan TorServer"); } || { __torLOG_status__=$(Std.log: DEBUG "Terjadi kesalahan saat menjalankan Tor"; Std.log: INFO "Mohon untuk mengecek konfigurasi anda dan coba lagi"); }; }; else { __TOR__MAIN__CONFIG "0" || { __torLOG_status__=$(Std.log: DEBUG "Terjadi kesalahan saat menjalankan Tor");return 1; };} fi
+		if (test "${TorConfig}" == "default") || ! (test -f "${TorConfig}"); then
+			# membuat file di temp
+			{ cat <<< "$default_conf"; } > $TEMP
+			if ! (${TorDaemond}); then figlet -f slant "Server Tor"; echo "---------------------------------------------"; Std.log: INFO "Menjalankan Server" 1>&2; Std.log: DEBUG "memulai config \${default}" 1>&2;echo; else true; fi
+			command -v tor &>/dev/null && { tor -f $TEMP; } || { Std.log: DEBUG "Menginstall tor..." 1>&2; apt-get install tor -y; }
+		else {
+			if ! (${TorDaemond}); then figlet -f slant "Server Tor"; echo "---------------------------------------------"; Std.log: INFO "Menjalankan Server" 1>&2; Std.log: DEBUG "memulai config \${$TorConfig}" 1>&2;echo; else true; fi
+			command -v tor &>/dev/null && { tor ${TorOpt}-f "$TorConfig"; } || { Std.log: DEBUG "Menginstall tor..." 1>&2; apt-get install tor -y; }
+		}; fi
+	}
+
+	# check apakah sudah install obfs4proxy
+	__init__(){
+		if ! test -f "${PREFIX}/bin/obfs4proxy"; then {
+			apt-get install obfs4proxy -y || { Std.log: ERROR "Tidak dapat menginstall obfs4proxy" 1>&2; sleep 0.1;Std.log: INFO "Mohon cek jaringan anda dan coba lagi" 1>&2;sleep 0.1; }
+		}; fi
+
+		declare -g this="ParseArgs"
+		parser.all: "$@"
+		eval "${ParseArgs[0]};${ParseArgs[1]};${ParseArgs[2]};${ParseArgs[3]}" 2>/dev/null # TorConfig="" statusTOR=true|false 
+		declare -g TorConfig="${TorConfig:-default}"
+		declare -g statusTOR="${statusTOR:-false}"
+		declare -g TorDaemond="${TorDaemond:-false}"
+		declare -g TorOpt="${TorOpt} "
+
+		# match
+		if ${statusTOR}; then { eval 0x285002674; }; fi
+	}
+
+	__init__ "$@"
+}
+
+TORDISABLE(){
+	declare -g this="ParseArgs"
+	parser.all: "$@"
+
+	eval "${ParseArgs[0]}"
+	declare -g ioSocks="${ioSocks:-off}"
+	if test "$ioSocks" == "on"; then
+		pkill -9 tor && { __torLOG_status__="TorServer berhasil di disable"; let returning=$?
+			rm -rf ${PREFIX}/tmp 2>/dev/null || return $returning
+		} || {
+			__torLOG_status__="Torserver dalam keadaan nonaktif";
+		}
+	elif test "$ioSocks" == "off"; then
+			true
+	fi			
+}
+
+
+shopt -s expand_aliases
+alias control.socks.setup:="SETUPTOR"
+alias control.tor.disable:="TORDISABLE"
+
+#__TOR__MAIN__CONFIG; echo "$default_conf"
