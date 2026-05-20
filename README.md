@@ -135,7 +135,7 @@ make install
 
 ## 📸 Screenshots
 
-| 🔍 Osint Nomor | 📱 Analisis Nomor | ☠️ Doxing Nomor |
+| 🔍 Osint Nomor | 📱 Analisis Nomor | ☠️ Profilling Nomor |
 |----------------|------------------|----------------|
 | <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/c10bd143-77bb-42ae-a6e3-baf8063b0767.png" width="250"> | <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/6f9b6f02-f4ea-4e46-8275-b0fee9bcde5b.png" width="250"> | <img src="https://raw.githubusercontent.com/ViewTechOrg/Server/main/Checker-Scammer/img/8f7e867e-b244-487c-8b92-b3a915b01e4f.png" width="250"> |
 
