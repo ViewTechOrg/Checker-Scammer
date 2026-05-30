@@ -69,7 +69,12 @@ install-py: detectCLI
 # UPDATE REPO 
 update: detectCLI
 	@echo "[>] Melakukan update ..";sleep 1
-	@git pull
+	@cd
+	@rm -rf Checker-Scammer
+	@git clone https://github.com/ViewTechOrg/Checker-Scammer
+	@cd Checker-Scammer
+	@make install
+	@just run
 
 install: install-system install-py
 
