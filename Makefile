@@ -3,17 +3,13 @@
 # date       : 2025-06-05 | 08.47 WIB
 # developer  : Xenzi & Polygon (pejuang kentang)
 ########################################
-# Daftar package per OS
+
 PACKAGEBASH_TERMUX := curl python bc ncurses-utils file ossp-uuid uuid-utils less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils just fzf gum silversearcher-ag grep brotli toilet binutils python-pip bzip2 neofetch
-PACKAGEBASH_DEBIAN := curl python3 bc ncurses-bin file ossp-uuid uuid-runtime less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils fzf silversearcher-ag grep brotli toilet binutils python3-pip bzip2 neofetch
+PACKAGEBASH_DEBIAN := curl python3.13 python3.13-venv python3-pip bc ncurses-bin file ossp-uuid uuid-runtime less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils fzf silversearcher-ag grep brotli toilet binutils bzip2 neofetch
 PACKAGEBASH_UBUNTU := $(PACKAGEBASH_DEBIAN)
-
-PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests lzstring faker phonenumbers blessed geopy cloudscraper emoji fuzzywuzzy
-
+PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests lzstring faker phonenumbers blessed geopy cloudscraper emoji fuzzywuzzy textual
 TERMUX_PATH := /data/data/com.termux/files/usr/bin/bash
-PYTHON_VERSION := $(shell python -V | sed 's/[[:space:]]//g' | cut -c 1-10 | tr '[:upper:]' '[:lower:]')
 
-# cek os type
 detectCLI:
 	@echo "[?] Mengecek lingkungan..."
 	@if [ -f "$(TERMUX_PATH)" ]; then \
@@ -28,65 +24,80 @@ detectCLI:
 	fi; \
 	echo $$OS_TYPE > .os_type
 
-# install package for bash
 install-system: detectCLI
-	@echo "[?] Menginstall package dari bash..."
 	@OS_TYPE=$$(cat .os_type); \
+	echo "[?] Menginstall package..."; \
 	if [ "$$OS_TYPE" = "termux" ]; then \
 		PACKAGES="$(PACKAGEBASH_TERMUX)"; \
 		INSTALL_CMD="pkg install -y"; \
-	elif [ "$$OS_TYPE" = "debian" ] || [ "$$OS_TYPE" = "ubuntu" ]; then \
+	else \
 		PACKAGES="$(PACKAGEBASH_DEBIAN)"; \
 		INSTALL_CMD="sudo apt-get install -y"; \
+		sudo apt-get update; \
 	fi; \
 	for pkg in $$PACKAGES; do \
-		echo "[>] Menginstall $$pkg..."; \
-		yes|$$INSTALL_CMD $$pkg >/dev/null 2>&1; \
-		if command -v $$pkg >/dev/null 2>&1 || dpkg -l | grep -qw $$pkg; then \
-			echo "[✓] Berhasil menginstall $$pkg"; \
-		else \
-			echo "[✗] Gagal menginstall $$pkg"; \
-			echo "[!] Jalankan manual: $$INSTALL_CMD $$pkg"; \
-		fi; \
+		echo "[>] $$pkg"; \
+		yes | $$INSTALL_CMD $$pkg >/dev/null 2>&1; \
 	done
-	@pip install textual
-	@pip install --upgrade textual
 
-# install package for python
-install-py: detectCLI
+prepare-venv: detectCLI
 	@OS_TYPE=$$(cat .os_type); \
-	if command -v python3 >/dev/null 2>&1; then \
-		echo "[✓] Python3 ditemukan"; \
-		echo "[>] Menginstall Python package: $(PACKAGEPY)..."; \
-		pip3 install $(PACKAGEPY); \
-		echo "[>] Python Berhasil DI setup"; \
+	if [ "$$OS_TYPE" = "termux" ]; then \
+		exit 0; \
+	fi; \
+	echo "[>] Mengatur permission project..."; \
+	sudo chown -R $$(whoami):$$(whoami) "$$(pwd)"; \
+	if ! command -v python3.13 >/dev/null 2>&1; then \
+		echo ""; \
+		echo "[✗] Python 3.13 tidak ditemukan."; \
+		exit 1; \
+	fi; \
+	PYVER=$$(python3.13 -c 'import sys;print(f"{sys.version_info.major}.{sys.version_info.minor}")'); \
+	if [ "$$PYVER" != "3.13" ]; then \
+		echo "[✗] Python harus versi 3.13"; \
+		exit 1; \
+	fi; \
+	if [ ! -d venv ]; then \
+		echo "[>] Membuat Virtual Environment..."; \
+		python3.13 -m venv venv; \
+	fi; \
+	. venv/bin/activate && \
+	pip install --upgrade pip setuptools wheel
+
+install-py: detectCLI prepare-venv
+	@OS_TYPE=$$(cat .os_type); \
+	if [ "$$OS_TYPE" = "termux" ]; then \
+		echo "[>] Install Python Package (Termux)..."; \
+		pip install $(PACKAGEPY); \
 	else \
-		echo "[✗] Python3 tidak ditemukan! Silakan install terlebih dahulu."; \
+		echo "[>] Install Python Package (VENV)..."; \
+		. venv/bin/activate && \
+		pip install $(PACKAGEPY); \
 	fi
 
-	@if ! test -d "$$HOME/.local"; then \
-		mkdir "$$HOME/.local"; \
-	fi
-
-# UPDATE REPO 
 update: detectCLI
-	@echo "[>] Melakukan update ..";sleep 1
-	@cd
-	@rm -rf Checker-Scammer
+	@echo "[>] Update repository..."
+	@cd && rm -rf Checker-Scammer
 	@git clone https://github.com/ViewTechOrg/Checker-Scammer
-	@cd Checker-Scammer
-	@make install
-	@just run
+	@cd Checker-Scammer && make install && just run
 
-install: install-system install-py
+fix: detectCLI
+	@OS_TYPE=$$(cat .os_type); \
+	if [ "$$OS_TYPE" = "termux" ]; then \
+		pip uninstall requests -y; \
+		pip uninstall psutil -y; \
+		pip install requests; \
+		pip install "urllib3<2"; \
+	else \
+		. venv/bin/activate && \
+		pip uninstall requests -y && \
+		pip uninstall psutil -y && \
+		pip install requests && \
+		pip install "urllib3<2"; \
+	fi
 
-fix:
-	rm -rf $$PREFIX/lib/$(PYTHON_VERSION)/site-packages/requests
-	pip uninstall requests -y
-	pip uninstall psutil -y
-	pip install requests
-	pip install "urllib3<2"
+install: install-system prepare-venv install-py
 
 all: install
 
-.PHONY: detectCLI install-system install-py update fix install all
+.PHONY: detectCLI install-system prepare-venv install-py update fix install all
