@@ -49,6 +49,8 @@ install-system: detectCLI
 			echo "[!] Jalankan manual: $$INSTALL_CMD $$pkg"; \
 		fi; \
 	done
+	@pip install textual
+	@pip install --upgrade textual
 
 # install package for python
 install-py: detectCLI
