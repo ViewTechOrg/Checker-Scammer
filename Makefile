@@ -25,8 +25,8 @@ detectCLI:
 	echo $$OS_TYPE > .os_type
 
 install-system: detectCLI
-    @pip install textual 
-    @pip install --upgrade textual
+	@pip install textual 
+	@pip install --upgrade textual
 	@OS_TYPE=$$(cat .os_type); \
 	echo "[?] Menginstall package..."; \
 	if [ "$$OS_TYPE" = "termux" ]; then \
