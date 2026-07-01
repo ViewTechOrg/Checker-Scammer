@@ -7,7 +7,7 @@
 PACKAGEBASH_TERMUX := curl python bc ncurses-utils file ossp-uuid uuid-utils less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils just fzf gum silversearcher-ag grep brotli toilet binutils python-pip bzip2 neofetch
 PACKAGEBASH_DEBIAN := curl python3.13 python3.13-venv python3-pip bc ncurses-bin file ossp-uuid uuid-runtime less zsh boxes figlet ruby clang tree jq ripgrep coreutils xz-utils fzf silversearcher-ag grep brotli toilet binutils bzip2 neofetch
 PACKAGEBASH_UBUNTU := $(PACKAGEBASH_DEBIAN)
-PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests lzstring faker phonenumbers blessed geopy cloudscraper emoji fuzzywuzzy textual
+PACKAGEPY := dns-client requests bs4 rich pycryptodome rich-cli certifi npyscreen prompt_toolkit requests lzstring faker phonenumbers blessed geopy cloudscraper emoji fuzzywuzzy
 TERMUX_PATH := /data/data/com.termux/files/usr/bin/bash
 
 detectCLI:
